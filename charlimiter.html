@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+        textarea{height:150px;
+width:300px;}
+        </style>
+    </head>
+<body>
+<!--
+<p>A function is triggered when the user releases a key in the input field. The function transforms the character to upper case.</p>
+<textarea id="fname" onkeyup="myFunction()" width="640" height="480"></textarea><span id="chars">0</span>
+-->
+<script> /*
+function myFunction() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+  var chars = document.getElementById('chars');
+  chars.innerHTML = x.value.length;
+}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<textarea id='longText' ></textarea><br>
+<span id='amtleft'><label>&#40;<span>2000</span> characters left&#41;</label></span>
+<script>
+function textCount(val) {
+    var len = val.value.length;
+
+    if (len >= 500) {
+        val.value = val.value.substring(0, 2000);
+        $('#amtleft span').text(0);
+    } else {
+        $('#amtleft span').text(2000 - len);
+    }
+}
+textCount($('#longText').get(0));
+$('#longText').keyup(function() {
+    textCount(this);
+});</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
